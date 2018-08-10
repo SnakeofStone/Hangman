@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1533829773 source:c:\users\jorgeruben\google drive\uag\3 cuatrimestre\programacion\hangman\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+
