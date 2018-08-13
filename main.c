@@ -22,18 +22,15 @@ char *palabras[] = {palabra0, palabra1, palabra2, palabra3, palabra4,
 
 // Definicion de funciones
 void printHangman(int errores);
-void checkWord(char* palabra, char letra, int* aciertoLugar);
+void checkLetter(char* palabra, char letra, int* aciertoLugar);
 
 // Main function
 int main()
 {
-    // Inicilización de variables
-    int ran, palabrasLen, errores = 1;
-    int aciertoLugar[2] = {0, 0};
-    char guess;
-
-    // Largo del arreglo palabras
-    palabrasLen = sizeof(palabras)/sizeof(palabras[0]);
+    // Inicilizacion de variables
+    int ran, errores = 1;
+    int aciertoLugar[2] = {0, 0};      // Lugar 0 = Correcto o no; Lugar 1 = Lugar del acierto
+    char guess; // Letra introducida
 
     //Random num from [0, 10)
     time_t T;
@@ -47,17 +44,19 @@ int main()
         printHangman(errores);
         printf("Introduzca una letra: ");
         scanf(" %c", &guess);
-        checkWord(palabras[ran], guess, &aciertoLugar);
+        checkLetter(palabras[ran], guess, &aciertoLugar);
 
+        // Verificar si la letra se encuentra en la palabra o no
         if (aciertoLugar[0] == 0)
         {
             printf("La letra introducida no se encuentra dentro de la palabra\n");
             errores++;
         }
-        else if (aciertoLugar[1] == 1)
+        else if (aciertoLugar[0] == 1)
         {
-            printf("Palabra correcta! \nPalabra: %s", palabras[ran]);
-            errores = 8;
+//            printf("Palabra correcta! \nPalabra: %s", palabras[ran]);
+            printf("Letra correcta!\n");
+            printf("Posición %d", aciertoLugar[1] + 1);
         }
     }
 
@@ -148,7 +147,7 @@ void printHangman(int errores)
     }
 }
 
-void checkWord(char* palabra, char letra, int* aciertoLugar)
+void checkLetter(char* palabra, char letra, int* aciertoLugar)
 {
     int i;
     for(i = 0; i < i + 1; i++)
@@ -160,14 +159,11 @@ void checkWord(char* palabra, char letra, int* aciertoLugar)
             break;
         }
 
-        else
+        else if(letra == palabra[i])
         {
-            if(letra == palabra[i])
-            {
-                aciertoLugar[0] = 1;
-                aciertoLugar[1] = i;
-                break;
-            }
+            *aciertoLugar = 1;
+            *(aciertoLugar+1) = i;
+            break;
         }
     }
 }
