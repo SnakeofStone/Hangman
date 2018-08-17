@@ -5,11 +5,16 @@
 	<time.h>
 	<windows.h>
 
-<<<<<<< HEAD
-1534488616 source:c:\users\jorgeruben\github\hangman\main.c
-=======
-1534487536 source:c:\users\jorgeruben\github\hangman\main.c
->>>>>>> PositionalCorrect
+1533829773 D
+
+1534488659 source:c:\users\jorgeruben\github\hangman\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	<string.h>
+
+1534487536 itionalCorrect
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
