@@ -5,9 +5,10 @@
 	<time.h>
 	<windows.h>
 
-1534191546 source:c:\users\jorgeruben\github\hangman\main.c
+1534487536 source:c:\users\jorgeruben\github\hangman\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<windows.h>
+	<string.h>
 
