@@ -60,7 +60,7 @@ int main()
     {
         //system("cls");
         printHangman(errores);
-        printf("Intentos: ");
+        printf("Letras: ");
         puts(palIntro);
         printf("Numero de errores: %d\n", errores-1);
         printf("Introduzca una letra: ");
